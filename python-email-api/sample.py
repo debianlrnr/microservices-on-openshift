@@ -35,7 +35,7 @@ class EmailResource(object):
         resp.status = falcon.HTTP_202
         server = smtplib.SMTP('smtp.gmail.com', 587)
         server.starttls()
-        server.login(os.getenv('GMAIL_USERNAME', 'ocp3.test@gmail.com'), os.getenv('GMAIL_PASSWORD', '0cp3te5T'))
+        server.login(os.getenv('GMAIL_USERNAME', 'ocp3.test@gmail.com'), os.getenv('GMAIL_PASSWORD', ''))
         msg = email_req['msg']
         server.sendmail(os.getenv('GMAIL_USERNAME', 'ocp3.test@gmail.com'), email_req['to'], msg)
         server.quit()
